@@ -1,2 +1,2 @@
 # Galaxias
-Biblioteca desenvolvida para controlar o robô teimoso
+Biblioteca desenvolvida para o controle do robô de resgate da Equipe Teimosa
