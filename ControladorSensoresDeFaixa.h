@@ -16,14 +16,16 @@
 #define CURVA_DE_90_GRAUS_PARA_DIREITA  9
 #define ROTATORIA                       10
 #define GAP                             11
+#define SITUACAO_NAO_IMPORTANTE         12
 
 class ControladorSensoresDeFaixa
 {
   public:
     ControladorSensoresDeFaixa();
     int obterSituacaoAtual();
-    SensorDeRefletancia sensor_refletancia_frontal;
-    SensorDeRefletancia sensor_refletancia_traseiro;
+    int lerSensorFrontal();
+    int lerSensorTraseiro();
+    void mostrarResultados();
   private:
     void lerSensoresPrincipais();
 
@@ -37,11 +39,15 @@ class ControladorSensoresDeFaixa
     const int _limite = 500;
     const int  limite = 150;
 
-    SensorDeRefletancia sensor_refletancia_esquerdo_extremo;
-    SensorDeRefletancia sensor_refletancia_esquerdo_centro;
-    SensorDeRefletancia sensor_refletancia_central;
-    SensorDeRefletancia sensor_refletancia_direito_centro;
-    SensorDeRefletancia sensor_refletancia_direito_extremo;
+    int situacao_atual;
+
+    SensorDeRefletancia sensor_esquerdo_extremo;
+    SensorDeRefletancia sensor_esquerdo_centro;
+    SensorDeRefletancia sensor_frontal;
+    SensorDeRefletancia sensor_central;
+    SensorDeRefletancia sensor_direito_centro;
+    SensorDeRefletancia sensor_direito_extremo;
+    SensorDeRefletancia sensor_traseiro;
 };
 
 #endif
